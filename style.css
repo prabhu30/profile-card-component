@@ -1,10 +1,9 @@
 :root {
-    --clr-primary-300: hsl(31, 77%, 52%);
-    --clr-primary-700: hsl(184, 100%, 22%);
-    --clr-primary-900: hsl(179, 100%, 13%);
+    --clr-primary-500: hsl(185, 75%, 39%);
+    --clr-primary-700: hsl(227, 10%, 46%);
+    --clr-primary-900: hsl(229, 23%, 23%);
 
-    --clr-neutral-300: hsl(0, 0%, 95%);
-    --clr-neutral-500: hsla(0, 0%, 100%, 0.75);
+    --clr-neutral-300: hsl(0, 0%, 59%);
 }
 
 /*
@@ -17,196 +16,88 @@
 }
 
 /*
-    2. Remove default margin
-  */
+  2. Remove default margin
+*/
 * {
     margin: 0;
+    padding: 0;
 }
 
-/*
-    3. Allow percentage-based heights in the application
-  */
-html,
-body {
-    height: 100%;
-}
-
-/*
-    Typographic tweaks!
-    4. Add accessible line-height
-    5. Improve text rendering
-  */
-body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-}
-
-/*
-    6. Improve media defaults
-  */
-img,
-picture,
-video,
-canvas,
-svg {
-    display: block;
-    max-width: 100%;
-}
-
-/*
-    7. Remove built-in form typography styles
-  */
-input,
-button,
-textarea,
-select {
-    font: inherit;
-}
-
-/*
-    8. Avoid text overflows
-  */
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    overflow-wrap: break-word;
-}
-
-/*
-    9. Create a root stacking context
-  */
-#root,
-#__next {
-    isolation: isolate;
-}
 
 /* general styling */
-
 body {
-    font-family: 'Lexend Deca', sans-serif;
-    font-size: 15px;
-    background-color: var(--clr-neutral-300);
+    font-size: 18px;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: var(--clr-primary-500);
+    background-image: url(images/bg-pattern-top.svg), url(images/bg-pattern-bottom.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: right 48vw bottom 40vh,
+        left 45vw top 44vh;
 
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
-    overflow: hidden;
-    max-width: 960px;
-    margin: 0rem auto;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .product {
-    border: 1px solid var(--clr-neutral-300);
+    max-width: 420px;
+    background-color: #fff;
+    border: 1px solid var(--clr-primary-500);
+    border-style: none;
     border-radius: 0.5rem;
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
 }
 
-.card {
-    color: var(--clr-neutral-300);
-    padding: 3rem;
-
-    display: grid;
-    gap: 1.25rem;
-}
-
-.card-1 {
-    background-color: var(--clr-primary-300);
-}
-
-.card-2 {
-    background-color: var(--clr-primary-700);
-}
-
-.card-3 {
-    background-color: var(--clr-primary-900);
+.image {
+    width: 100px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin-top: -52px;
+    margin-bottom: 1rem;
 }
 
 .heading {
-    font-family: 'Big Shoulders Display', cursive;
-    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--clr-primary-900);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.description {
-    color: var(--clr-neutral-500);
-}
-
-.button {
-    text-decoration: none;
-    width: max-content;
-    text-transform: capitalize;
-    background-color: var(--clr-neutral-300);
-    margin-top: 4rem;
-    padding: 0.75rem 2rem;
-    border-style: none;
-    border-radius: 2rem;
-    transition: color .4s, background-color .4s ease-in-out;
-}
-
-.button-1 {
-    color: var(--clr-primary-300);
-}
-
-.button-2 {
+.age {
     color: var(--clr-primary-700);
+    padding-left: 0.5rem;
+    font-weight: lighter;
 }
 
-.button-3 {
+.city {
+    color: var(--clr-primary-700);
+    font-size: 0.8125rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.flex-group {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid hsl(0, 9%, 87%);
+}
+
+.num {
+    font-weight: bold;
     color: var(--clr-primary-900);
 }
 
-/* active states */
-
-.button-1:hover {
+.category {
+    padding-top: 0.25rem;
+    font-size: 0.625rem;
+    letter-spacing: 2px;
     color: var(--clr-neutral-300);
-    padding: 0.6rem 1.85rem;
-    border: 0.15rem solid var(--clr-neutral-300);
-    background-color: var(--clr-primary-300);
-}
-
-.button-2:hover {
-    color: var(--clr-neutral-300);
-    padding: 0.6rem 1.85rem;
-    border: 0.15rem solid var(--clr-neutral-300);
-    background-color: var(--clr-primary-700);
-}
-
-.button-3:hover {
-    color: var(--clr-neutral-300);
-    padding: 0.6rem 1.85rem;
-    border: 0.15rem solid var(--clr-neutral-300);
-    background-color: var(--clr-primary-900);
-}
-
-@media screen and (max-width: 768px) {
-    .container {
-        height: fit-content;
-        max-width: 80%;
-    }
-
-    .card {
-        padding: 2rem;
-    }
-
-    .button {
-        margin-top: 0.5rem;
-    }
-
-    .product {
-        grid-template-columns: 1fr;
-        margin: 4rem auto;
-    }
-}
-
-@media screen and (min-width: 769px) and (max-width: 1020px) {
-    .container {
-        max-width: 95%;
-    }
 }
